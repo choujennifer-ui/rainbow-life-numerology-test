@@ -1,0 +1,401 @@
+[
+  {
+    "id": "GC001",
+    "PASS": true,
+    "checks": {
+      "calendar": true,
+      "solar_stages": true,
+      "solar_levels": true,
+      "lunar_stages": true,
+      "lunar_levels": true
+    },
+    "lunar_actual": [
+      1956,
+      11,
+      12
+    ],
+    "solar_stages": [
+      "21/3",
+      "24/6",
+      "28/10/1",
+      "31/4",
+      "34/7"
+    ],
+    "solar_levels": [
+      6,
+      5,
+      5,
+      3,
+      2
+    ],
+    "lunar_stages": [
+      "21/3",
+      "23/5",
+      "26/8",
+      "29/11/2",
+      "32/5"
+    ],
+    "lunar_levels": [
+      3,
+      5,
+      3,
+      6,
+      5
+    ]
+  },
+  {
+    "id": "GC002",
+    "PASS": true,
+    "checks": {
+      "calendar": true,
+      "solar_stages": true,
+      "solar_levels": true,
+      "lunar_stages": true,
+      "lunar_levels": true,
+      "solar_lines": true,
+      "lunar_lines": true
+    },
+    "lunar_actual": [
+      1947,
+      6,
+      13
+    ],
+    "solar_stages": [
+      "21/3",
+      "28/10/1",
+      "31/4",
+      "37/10/1",
+      "40/4"
+    ],
+    "solar_levels": [
+      5,
+      5,
+      7,
+      7,
+      7
+    ],
+    "lunar_stages": [
+      "21/3",
+      "27/9",
+      "31/4",
+      "37/10/1",
+      "40/4"
+    ],
+    "lunar_levels": [
+      5,
+      5,
+      7,
+      7,
+      7
+    ]
+  },
+  {
+    "id": "GC003",
+    "PASS": true,
+    "checks": {
+      "calendar": true,
+      "solar_stages": true,
+      "solar_levels": true,
+      "lunar_stages": true,
+      "lunar_levels": true
+    },
+    "lunar_actual": [
+      1985,
+      5,
+      12
+    ],
+    "solar_stages": [
+      "23/5",
+      "29/11/2",
+      "40/4",
+      "45/9",
+      "47/11/2"
+    ],
+    "solar_levels": [
+      5,
+      7,
+      2,
+      5,
+      5
+    ],
+    "lunar_stages": [
+      "23/5",
+      "28/10/1",
+      "31/4",
+      "36/9",
+      "38/11/2"
+    ],
+    "lunar_levels": [
+      5,
+      7,
+      2,
+      4,
+      5
+    ]
+  },
+  {
+    "id": "GC004",
+    "PASS": true,
+    "checks": {
+      "calendar": true,
+      "solar_stages": true,
+      "solar_levels": true,
+      "lunar_stages": true,
+      "lunar_levels": true
+    },
+    "lunar_actual": [
+      1982,
+      6,
+      24
+    ],
+    "solar_stages": [
+      "20/2",
+      "28/10/1",
+      "32/5",
+      "36/9",
+      "38/11/2"
+    ],
+    "solar_levels": [
+      7,
+      7,
+      3,
+      5,
+      7
+    ],
+    "lunar_stages": [
+      "20/2",
+      "26/8",
+      "32/5",
+      "36/9",
+      "38/11/2"
+    ],
+    "lunar_levels": [
+      7,
+      7,
+      2,
+      5,
+      5
+    ]
+  },
+  {
+    "id": "GC005",
+    "PASS": true,
+    "checks": {
+      "calendar": true,
+      "solar_stages": true,
+      "solar_levels": true,
+      "lunar_stages": true,
+      "lunar_levels": true
+    },
+    "lunar_actual": [
+      2019,
+      6,
+      16
+    ],
+    "solar_stages": [
+      "12/3",
+      "19/10/1",
+      "28/10/1",
+      "30/3",
+      "43/7"
+    ],
+    "solar_levels": [
+      3,
+      7,
+      7,
+      2,
+      4
+    ],
+    "lunar_stages": [
+      "12/3",
+      "18/9",
+      "25/7",
+      "27/9",
+      "40/4"
+    ],
+    "lunar_levels": [
+      3,
+      5,
+      2,
+      5,
+      2
+    ]
+  },
+  {
+    "id": "GC006",
+    "PASS": true,
+    "checks": {
+      "calendar": true,
+      "solar_stages": true,
+      "solar_levels": true,
+      "lunar_stages": true,
+      "lunar_levels": true
+    },
+    "lunar_actual": [
+      2021,
+      11,
+      24
+    ],
+    "solar_stages": [
+      "05/5",
+      "08/8",
+      "17/8",
+      "25/7",
+      "30/3"
+    ],
+    "solar_levels": [
+      2,
+      2,
+      3,
+      5,
+      2
+    ],
+    "lunar_stages": [
+      "05/5",
+      "07/7",
+      "13/4",
+      "21/3",
+      "26/8"
+    ],
+    "lunar_levels": [
+      2,
+      2,
+      5,
+      3,
+      2
+    ]
+  },
+  {
+    "id": "GC007",
+    "PASS": true,
+    "checks": {
+      "calendar": true,
+      "solar_stages": true,
+      "solar_levels": true,
+      "lunar_stages": true,
+      "lunar_levels": true,
+      "lunar_lines": true
+    },
+    "lunar_actual": [
+      1988,
+      1,
+      5
+    ],
+    "solar_stages": [
+      "26/8",
+      "28/10/1",
+      "31/4",
+      "35/8",
+      "42/6"
+    ],
+    "solar_levels": [
+      5,
+      7,
+      2,
+      4,
+      2
+    ],
+    "lunar_stages": [
+      "26/8",
+      "27/9",
+      "32/5",
+      "36/9",
+      "43/7"
+    ],
+    "lunar_levels": [
+      4,
+      4,
+      4,
+      4,
+      1
+    ]
+  },
+  {
+    "id": "GC009",
+    "PASS": true,
+    "checks": {
+      "calendar": true,
+      "solar_stages": true,
+      "solar_levels": true,
+      "lunar_stages": true,
+      "lunar_levels": true
+    },
+    "lunar_actual": [
+      2021,
+      6,
+      7
+    ],
+    "solar_stages": [
+      "05/5",
+      "12/3",
+      "19/10/1",
+      "21/3",
+      "22/4"
+    ],
+    "solar_levels": [
+      2,
+      3,
+      5,
+      3,
+      3
+    ],
+    "lunar_stages": [
+      "05/5",
+      "11/2",
+      "18/9",
+      "20/2",
+      "21/3"
+    ],
+    "lunar_levels": [
+      2,
+      7,
+      2,
+      7,
+      3
+    ]
+  },
+  {
+    "id": "GC010",
+    "PASS": true,
+    "checks": {
+      "calendar": true,
+      "solar_stages": true,
+      "solar_levels": true,
+      "lunar_stages": true,
+      "lunar_levels": true
+    },
+    "lunar_actual": [
+      1947,
+      8,
+      10
+    ],
+    "solar_stages": [
+      "21/3",
+      "30/3",
+      "36/9",
+      "42/6",
+      "45/9"
+    ],
+    "solar_levels": [
+      3,
+      2,
+      4,
+      3,
+      5
+    ],
+    "lunar_stages": [
+      "21/3",
+      "29/11/2",
+      "30/3",
+      "36/9",
+      "39/12/3"
+    ],
+    "lunar_levels": [
+      2,
+      2,
+      2,
+      4,
+      2
+    ]
+  }
+]
