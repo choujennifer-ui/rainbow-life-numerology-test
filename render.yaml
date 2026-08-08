@@ -1,0 +1,12 @@
+services:
+  - type: web
+    name: rainbow-life-numerology-test
+    runtime: python
+    plan: free
+    buildCommand: ""
+    startCommand: python web_app.py
+    healthCheckPath: /
+    autoDeploy: false
+    envVars:
+      - key: PYTHON_VERSION
+        value: 3.13.5
