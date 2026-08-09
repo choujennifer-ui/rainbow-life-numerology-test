@@ -179,7 +179,7 @@ def form_page():
         <header class="site-header"><a class="brand" href="/"><span class="brand-dot"></span>彩虹生命數字</a><span class="module-label">MODULE 1</span></header>
         <main class="form-page">
           <section class="form-card">
-            <div class="form-heading"><p class="eyebrow">CALCULATION TOOL</p><h1>從生日，看見你的彩虹生命數字</h1><p>輸入陽曆生日後，系統會完成農曆換算與五階段、功課等級、連線的計算。</p></div>
+            <div class="form-heading"><p class="eyebrow">CALCULATION TOOL</p><h1>從生日，窺見你的生命藍圖</h1><p>輸入陽曆生日後，系統會完成農曆換算與五階段、功課等級、連線的計算。</p></div>
             <form method="POST" action="/calculate" autocomplete="off">
               <div class="field full"><label for="name">姓名 <span>選填</span></label><input id="name" name="name" autocomplete="off"></div>
               <fieldset><legend>陽曆出生日期</legend><div class="date-fields"><div class="field"><label for="year">年份</label><input id="year" name="year" type="number" inputmode="numeric" min="1900" max="2100" autocomplete="off" required></div><div class="field"><label for="month">月份</label><input id="month" name="month" type="number" inputmode="numeric" min="1" max="12" autocomplete="off" required></div><div class="field"><label for="day">日期</label><input id="day" name="day" type="number" inputmode="numeric" min="1" max="31" autocomplete="off" required></div></div></fieldset>
