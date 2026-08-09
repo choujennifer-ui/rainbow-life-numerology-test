@@ -548,20 +548,79 @@ form {{ display:grid; gap:24px; }} fieldset {{ min-width:0; margin:0; padding:0;
   }}
 
 
-  .cycle-section {{ margin-top:20px; }}
+  .cycle-section {{ margin-top:18px; }}
   .cycle-section-heading {{ margin-bottom:12px; }}
-  .cycle-section-heading h2 {{ font-size:18px; }}
+  .cycle-section-heading h2 {{ font-size:17px; }}
   .cycle-section-heading > p:last-child {{ font-size:9px; }}
-  .cycle-grid {{ grid-template-columns:1fr; gap:12px; }}
-  .cycle-card {{ padding:10px 6px 8px; border-radius:14px; }}
-  .cycle-card h3 {{ font-size:14px; }}
-  .cycle-svg {{ width:min(100%,320px); }}
-  .tri-outer {{ font-size:10px; }}
-  .tri-inner {{ font-size:8px; }}
-  .flow-label {{ font-size:10px; }}
-  .cycle-year-cell {{ grid-template-columns:1fr 25px; }}
-  .cycle-number,.cycle-level {{ min-height:27px; font-size:10px; }}
-  .cycle-note {{ padding:0 5px; font-size:9px; line-height:1.45; }}
+  /* iPhone: keep Solar and Lunar triangles side-by-side */
+  .cycle-grid {{
+    grid-template-columns:repeat(2,minmax(0,1fr));
+    gap:6px;
+  }}
+
+  .cycle-card {{
+    min-width:0;
+    padding:7px 3px 6px;
+    border-radius:12px;
+  }}
+
+  .cycle-card h3 {{
+    font-size:11px;
+    line-height:1.2;
+  }}
+
+  .cycle-svg {{
+    width:100%;
+    max-width:180px;
+    margin-top:1px;
+  }}
+
+  .tri-outline {{ stroke-width:1.35; }}
+  .tri-tick {{ stroke-width:1.1; }}
+
+  .tri-outer {{
+    font-size:8px;
+    font-weight:700;
+  }}
+
+  .tri-inner {{
+    font-size:6.5px;
+  }}
+
+  .flow-dot {{ r:3; }}
+
+  .flow-label {{
+    font-size:7.5px;
+  }}
+
+  .cycle-year-strip {{
+    grid-template-columns:repeat(3,minmax(0,1fr));
+  }}
+
+  .cycle-year-cell {{
+    grid-template-columns:minmax(0,1fr) 18px;
+  }}
+
+  .cycle-number,
+  .cycle-level {{
+    min-height:23px;
+    font-size:7.5px;
+  }}
+
+  .cycle-number {{
+    padding:1px;
+    letter-spacing:-.03em;
+  }}
+
+  .cycle-level {{
+    font-size:8px;
+  }}
+
+  .cycle-note {{
+    padding:0 5px;
+    font-size:8px;
+    line-height:1.4;
+  }}
 
   .report-note {{
     margin-top:16px;
