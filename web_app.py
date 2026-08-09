@@ -565,13 +565,13 @@ form {{ display:grid; gap:24px; }} fieldset {{ min-width:0; margin:0; padding:0;
   }}
 
   .cycle-card h3 {{
-    font-size:11px;
+    font-size:11.5px;
     line-height:1.2;
   }}
 
   .cycle-svg {{
     width:100%;
-    max-width:180px;
+    max-width:186px;
     margin-top:1px;
   }}
 
@@ -579,18 +579,19 @@ form {{ display:grid; gap:24px; }} fieldset {{ min-width:0; margin:0; padding:0;
   .tri-tick {{ stroke-width:1.1; }}
 
   .tri-outer {{
-    font-size:8px;
-    font-weight:700;
+    font-size:9px;
+    font-weight:750;
   }}
 
   .tri-inner {{
-    font-size:6.5px;
+    font-size:7.2px;
   }}
 
   .flow-dot {{ r:3; }}
 
   .flow-label {{
-    font-size:7.5px;
+    font-size:8.5px;
+    font-weight:900;
   }}
 
   .cycle-year-strip {{
