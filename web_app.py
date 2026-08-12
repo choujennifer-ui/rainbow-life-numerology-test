@@ -143,6 +143,19 @@ def calendar_card(side, lines):
 
 
 
+NINE_YEAR_MEANINGS = {
+    1: {"farming": "選種", "life": "新關係新目標", "meaning": "目標／實力"},
+    2: {"farming": "插秧", "life": "契機與貴人", "meaning": "辨真假／重細節"},
+    3: {"farming": "除草", "life": "革新與變動", "meaning": "嘗試改變習氣"},
+    4: {"farming": "施肥", "life": "決策與行動", "meaning": "鞏固壯大"},
+    5: {"farming": "結穗", "life": "主動與出擊", "meaning": "結善緣重行銷"},
+    6: {"farming": "助割", "life": "修補與療癒", "meaning": "熱誠服務完美共識"},
+    7: {"farming": "曬稻", "life": "休閒與反省", "meaning": "新知充電作回顧"},
+    8: {"farming": "結算", "life": "投資策略反省", "meaning": "慎思推演新契機"},
+    9: {"farming": "休耕", "life": "沉澱與不做", "meaning": "業力了結／待機變化"},
+}
+
+
 def report_today():
     """Current report date in the configured practice timezone."""
     return datetime.now(ZoneInfo(REPORT_TIMEZONE)).date()
@@ -269,6 +282,20 @@ def cycle_year_strip(side, sign):
     return "".join(cells)
 
 
+def nine_year_meaning_html(position):
+    item = NINE_YEAR_MEANINGS[position]
+    return (
+        f'<div class="cycle-meaning">'
+        f'<span class="meaning-position">（{position}）</span>'
+        f'<span class="meaning-farming">{escape(item["farming"])}</span>'
+        f'<span class="meaning-divider">｜</span>'
+        f'<span><b>生活上：</b>{escape(item["life"])}</span>'
+        f'<span class="meaning-divider">｜</span>'
+        f'<span><b>生命意義：</b>{escape(item["meaning"])}</span>'
+        f'</div>'
+    )
+
+
 def nine_year_cycle_section(result):
     as_of = report_today()
     solar_youth = result["solar"]["stages"]["youth"].main_digit
@@ -305,6 +332,21 @@ def nine_year_cycle_section(result):
         f'{lunar_today["year"]:04d}/{lunar_today["month"]:02d}/{lunar_today["day"]:02d}'
     )
 
+    solar_position = cycle["solar"]["current"].position
+    lunar_position = cycle["lunar"]["current"].position
+
+    if solar_position == lunar_position:
+        meaning_block = nine_year_meaning_html(solar_position)
+    else:
+        meaning_block = (
+            '<div class="cycle-meaning-stack">'
+            '<div class="meaning-side-label">國曆</div>'
+            f'{nine_year_meaning_html(solar_position)}'
+            '<div class="meaning-side-label">農曆</div>'
+            f'{nine_year_meaning_html(lunar_position)}'
+            '</div>'
+        )
+
     return f"""
     <section class="cycle-section">
       <div class="cycle-section-heading">
@@ -330,6 +372,8 @@ def nine_year_cycle_section(result):
           </div>
         </article>
       </div>
+
+      {meaning_block}
 
       <p class="cycle-note">外圈＝青年主命數起始的九年數字 · 內圈＝固定 1–9 位格 · 紅字＝目前流年</p>
     </section>
@@ -432,6 +476,34 @@ form {{ display:grid; gap:24px; }} fieldset {{ min-width:0; margin:0; padding:0;
 .cycle-level {{ border-left:1px solid var(--line); color:var(--purple-dark); font-size:13px; }}
 .current-year-cell .cycle-number {{ color:#d63c43; }}
 .current-year-cell .cycle-level {{ color:#d63c43; }}
+.cycle-meaning {{
+  display:flex;
+  flex-wrap:wrap;
+  justify-content:center;
+  align-items:center;
+  gap:5px;
+  margin:14px auto 0;
+  padding:10px 14px;
+  width:fit-content;
+  max-width:100%;
+  border:1px solid #e2d8e5;
+  border-radius:12px;
+  background:#fbf8fc;
+  color:#4f4053;
+  font-size:13px;
+  line-height:1.5;
+}}
+.meaning-position,.meaning-farming {{ color:var(--purple-dark); font-weight:850; }}
+.meaning-divider {{ color:#b8aabf; }}
+.cycle-meaning b {{ color:var(--ink); }}
+.cycle-meaning-stack {{ margin-top:14px; }}
+.meaning-side-label {{
+  margin:8px 0 4px;
+  color:var(--muted);
+  text-align:center;
+  font-size:11px;
+  font-weight:800;
+}}
 .cycle-note {{ margin:12px 0 0; color:var(--muted); text-align:center; font-size:11px; }}
 
 @media (max-width:620px) {{
@@ -614,6 +686,32 @@ form {{ display:grid; gap:24px; }} fieldset {{ min-width:0; margin:0; padding:0;
   }}
 
   .cycle-level {{
+    font-size:8px;
+  }}
+
+  .cycle-meaning {{
+    gap:3px;
+    margin-top:9px;
+    padding:7px 8px;
+    width:100%;
+    border-radius:9px;
+    font-size:8.5px;
+    line-height:1.4;
+  }}
+
+  .meaning-divider {{ display:none; }}
+
+  .cycle-meaning span {{
+    white-space:normal;
+  }}
+
+  .meaning-position,
+  .meaning-farming {{
+    font-size:9px;
+  }}
+
+  .meaning-side-label {{
+    margin-top:6px;
     font-size:8px;
   }}
 
