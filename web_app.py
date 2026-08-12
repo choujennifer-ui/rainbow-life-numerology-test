@@ -468,31 +468,36 @@ form {{ display:grid; gap:24px; }} fieldset {{ min-width:0; margin:0; padding:0;
 .current-year-cell .cycle-number {{ color:#d63c43; }}
 .current-year-cell .cycle-level {{ color:#d63c43; }}
 .cycle-meaning {{
-  display:grid;
-  grid-template-columns:auto auto 1fr;
-  gap:5px 8px;
+  display:flex;
+  flex-wrap:nowrap;
+  justify-content:center;
   align-items:center;
+  gap:6px;
   margin:12px 0 2px;
-  padding:11px 12px;
+  padding:10px 10px;
   width:100%;
   border:1px solid #dccbe2;
   border-radius:11px;
   background:linear-gradient(90deg,#f5edf7,#fbf8fc);
   color:#4f4053;
-  font-size:12px;
-  line-height:1.45;
+  font-size:11px;
+  line-height:1.35;
+  white-space:nowrap;
 }}
 .meaning-position {{
   color:var(--purple-dark);
-  font-size:14px;
+  font-size:12px;
   font-weight:900;
 }}
 .meaning-farming {{
   color:var(--purple-dark);
-  font-size:14px;
+  font-size:12px;
   font-weight:900;
 }}
-.meaning-divider {{ display:none; }}
+.meaning-divider {{
+  display:inline;
+  color:#b8aabf;
+}}
 .cycle-meaning b {{ color:var(--ink); }}
 .cycle-note {{ margin:12px 0 0; color:var(--muted); text-align:center; font-size:11px; }}
 
@@ -683,6 +688,7 @@ form {{ display:grid; gap:24px; }} fieldset {{ min-width:0; margin:0; padding:0;
     display:flex;
     flex-direction:column;
     align-items:flex-start;
+    white-space:normal;
     gap:2px;
     margin-top:7px;
     padding:6px 6px;
