@@ -335,17 +335,8 @@ def nine_year_cycle_section(result):
     solar_position = cycle["solar"]["current"].position
     lunar_position = cycle["lunar"]["current"].position
 
-    if solar_position == lunar_position:
-        meaning_block = nine_year_meaning_html(solar_position)
-    else:
-        meaning_block = (
-            '<div class="cycle-meaning-stack">'
-            '<div class="meaning-side-label">國曆</div>'
-            f'{nine_year_meaning_html(solar_position)}'
-            '<div class="meaning-side-label">農曆</div>'
-            f'{nine_year_meaning_html(lunar_position)}'
-            '</div>'
-        )
+    solar_meaning = nine_year_meaning_html(solar_position)
+    lunar_meaning = nine_year_meaning_html(lunar_position)
 
     return f"""
     <section class="cycle-section">
@@ -362,6 +353,7 @@ def nine_year_cycle_section(result):
           <div class="cycle-year-strip">
             {cycle_year_strip(cycle["solar"], "+")}
           </div>
+          {solar_meaning}
         </article>
 
         <article class="cycle-card">
@@ -370,10 +362,9 @@ def nine_year_cycle_section(result):
           <div class="cycle-year-strip">
             {cycle_year_strip(cycle["lunar"], "-")}
           </div>
+          {lunar_meaning}
         </article>
       </div>
-
-      {meaning_block}
 
       <p class="cycle-note">外圈＝青年主命數起始的九年數字 · 內圈＝固定 1–9 位格 · 紅字＝目前流年</p>
     </section>
@@ -477,33 +468,32 @@ form {{ display:grid; gap:24px; }} fieldset {{ min-width:0; margin:0; padding:0;
 .current-year-cell .cycle-number {{ color:#d63c43; }}
 .current-year-cell .cycle-level {{ color:#d63c43; }}
 .cycle-meaning {{
-  display:flex;
-  flex-wrap:wrap;
-  justify-content:center;
+  display:grid;
+  grid-template-columns:auto auto 1fr;
+  gap:5px 8px;
   align-items:center;
-  gap:5px;
-  margin:14px auto 0;
-  padding:10px 14px;
-  width:fit-content;
-  max-width:100%;
-  border:1px solid #e2d8e5;
-  border-radius:12px;
-  background:#fbf8fc;
+  margin:12px 0 2px;
+  padding:11px 12px;
+  width:100%;
+  border:1px solid #dccbe2;
+  border-radius:11px;
+  background:linear-gradient(90deg,#f5edf7,#fbf8fc);
   color:#4f4053;
-  font-size:13px;
-  line-height:1.5;
+  font-size:12px;
+  line-height:1.45;
 }}
-.meaning-position,.meaning-farming {{ color:var(--purple-dark); font-weight:850; }}
-.meaning-divider {{ color:#b8aabf; }}
+.meaning-position {{
+  color:var(--purple-dark);
+  font-size:14px;
+  font-weight:900;
+}}
+.meaning-farming {{
+  color:var(--purple-dark);
+  font-size:14px;
+  font-weight:900;
+}}
+.meaning-divider {{ display:none; }}
 .cycle-meaning b {{ color:var(--ink); }}
-.cycle-meaning-stack {{ margin-top:14px; }}
-.meaning-side-label {{
-  margin:8px 0 4px;
-  color:var(--muted);
-  text-align:center;
-  font-size:11px;
-  font-weight:800;
-}}
 .cycle-note {{ margin:12px 0 0; color:var(--muted); text-align:center; font-size:11px; }}
 
 @media (max-width:620px) {{
@@ -690,16 +680,17 @@ form {{ display:grid; gap:24px; }} fieldset {{ min-width:0; margin:0; padding:0;
   }}
 
   .cycle-meaning {{
-    gap:3px;
-    margin-top:9px;
-    padding:7px 8px;
+    display:flex;
+    flex-direction:column;
+    align-items:flex-start;
+    gap:2px;
+    margin-top:7px;
+    padding:6px 6px;
     width:100%;
-    border-radius:9px;
-    font-size:8.5px;
-    line-height:1.4;
+    border-radius:8px;
+    font-size:7.4px;
+    line-height:1.35;
   }}
-
-  .meaning-divider {{ display:none; }}
 
   .cycle-meaning span {{
     white-space:normal;
@@ -707,12 +698,12 @@ form {{ display:grid; gap:24px; }} fieldset {{ min-width:0; margin:0; padding:0;
 
   .meaning-position,
   .meaning-farming {{
-    font-size:9px;
+    display:inline;
+    font-size:8.5px;
   }}
 
-  .meaning-side-label {{
-    margin-top:6px;
-    font-size:8px;
+  .meaning-position {{
+    margin-right:2px;
   }}
 
   .cycle-note {{
