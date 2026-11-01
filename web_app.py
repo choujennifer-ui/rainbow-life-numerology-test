@@ -164,8 +164,8 @@ def report_today():
 def _find_solar_for_lunar(lunar_year, lunar_month, lunar_day):
     """UI-only helper: locate an ordinary lunar date by scanning Gregorian dates.
 
-    This does not alter the frozen Calendar Conversion Engine.  Leap-month
-    recurrence remains intentionally unsupported until its rule is frozen.
+    Leap-month births use their ordinary month number for annual recurrence.
+    The leap marker is retained in birth data, without a second calculation.
     """
     start = date(lunar_year, 1, 1)
     end = date(lunar_year + 1, 3, 31)
@@ -327,6 +327,8 @@ def nine_year_cycle_section(result):
         cycle["lunar"]["effective_flow_year"],
     )
 
+    lunar_birth_label = "（閏月出生）" if result["lunar_date"].get("is_leap_month", False) else ""
+
     lunar_today = cycle["as_of_lunar"]
     lunar_today_text = (
         f'{lunar_today["year"]:04d}/{lunar_today["month"]:02d}/{lunar_today["day"]:02d}'
@@ -357,7 +359,7 @@ def nine_year_cycle_section(result):
         </article>
 
         <article class="cycle-card">
-          <h3>農曆流年 <span>－</span></h3>
+          <h3>農曆流年 <span>－</span>{lunar_birth_label}</h3>
           {triangle_svg(cycle["lunar"], "-", lunar_progress)}
           <div class="cycle-year-strip">
             {cycle_year_strip(cycle["lunar"], "-")}
